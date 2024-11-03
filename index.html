@@ -2,6 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Love Expression</title>
 	<link rel="stylesheet" href="style.css">
@@ -11,7 +12,7 @@
 		<div class="love">
 			<h2>Are u <span>love</span> me</h2>
 			<button id="noButton" class="button">No</button>
-			<a id="yes" href="yes.html">Yes</a>
+			<a id="yes" href="yes.html" class="button">Yes</a>
 		</div>
 	</div>
 	
@@ -19,7 +20,7 @@
 		const noButton = document.getElementById("noButton");
 
 		noButton.addEventListener("mouseover", () => {
-			noButton.style.position = "absolute"; // Enable absolute positioning for movement
+			noButton.style.position = "absolute"; 
 			const x = Math.floor(Math.random() * (window.innerWidth - noButton.clientWidth));
 			const y = Math.floor(Math.random() * (window.innerHeight - noButton.clientHeight));
 			noButton.style.left = x + "px";
