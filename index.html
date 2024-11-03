@@ -20,7 +20,7 @@
 	const noButton = document.getElementById("noButton");
 	let isMoving = false; // Track if the button is currently moving
 
-	noButton.addEventListener("click", () => {
+	const moveButton = () => {
 		if (!isMoving) {
 			isMoving = true; // Set moving state to true
 			noButton.style.position = "absolute"; 
@@ -34,8 +34,12 @@
 				isMoving = false; // Allow moving again after cooldown
 			}, 500); // Adjust the timeout duration as needed (500ms)
 		}
-	});
+	};
+
+	noButton.addEventListener("mouseover", moveButton); // Move on mouseover
+	noButton.addEventListener("click", moveButton); // Move on click
 </script>
+
 
 
 </body>
