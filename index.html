@@ -16,16 +16,26 @@
 		</div>
 	</div>
 	
-	<script>
-		const noButton = document.getElementById("noButton");
+<script>
+	const noButton = document.getElementById("noButton");
+	let isMoving = false; // Track if the button is currently moving
 
-		noButton.addEventListener("mouseover", () => {
+	noButton.addEventListener("mouseover", () => {
+		if (!isMoving) {
+			isMoving = true; // Set moving state to true
 			noButton.style.position = "absolute"; 
 			const x = Math.floor(Math.random() * (window.innerWidth - noButton.clientWidth));
 			const y = Math.floor(Math.random() * (window.innerHeight - noButton.clientHeight));
 			noButton.style.left = x + "px";
 			noButton.style.top = y + "px";
-		});
-	</script>
+
+			// Cooldown period before the button can move again
+			setTimeout(() => {
+				isMoving = false; // Allow moving again after cooldown
+			}, 500); // Adjust the timeout duration as needed (500ms)
+		}
+	});
+</script>
+
 </body>
 </html>
